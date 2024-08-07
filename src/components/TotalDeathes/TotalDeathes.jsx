@@ -1,6 +1,11 @@
 "use client";
 import React from "react";
+
 const countryList = JSON.parse(localStorage.getItem("country")) || [];
+if (typeof window !== "undefined") {
+  const countryList123 = JSON.parse(localStorage.getItem("country")) || [];
+  countryList.push(...countryList123);
+}
 
 export default function TotalDeathes({ total }) {
   const num = total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -27,7 +32,7 @@ export default function TotalDeathes({ total }) {
                   {country.name}
                 </div>
                 <p>
-                  {String(total - Math.round(Math.random() * total))
+                  {String(total - Math.round(Math.random() * 6000000))
                     .toString()
                     .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                 </p>
