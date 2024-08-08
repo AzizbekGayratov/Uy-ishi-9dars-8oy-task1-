@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 
-const countryList = JSON.parse(localStorage.getItem("country")) || [];
+const countryList = [];
 if (typeof window !== "undefined") {
   const countryList123 = JSON.parse(localStorage.getItem("country")) || [];
   countryList.push(...countryList123);
