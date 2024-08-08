@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Deaths from "./Deaths";
 import Infections from "./Infections";
 
@@ -23,12 +23,15 @@ setTimeout(async () => {
   localStorage.setItem("country", JSON.stringify(country));
 }, 1000);
 
-setTimeout(() => {
-  window.location.reload();
-}, 1500);
-
 export default function Main({ data }) {
   const [active, setActive] = useState("deathes");
+
+  useEffect(() => {
+    setTimeout(() => {
+      window.location.reload();
+    }, 1500);
+  }, []);
+
   return (
     <div>
       <div className="flex items-center justify-between mb-2">
