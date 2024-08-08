@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Deaths from "./Deaths";
 import Infections from "./Infections";
 
@@ -25,12 +25,6 @@ setTimeout(async () => {
 
 export default function Main({ data }) {
   const [active, setActive] = useState("deathes");
-
-  useEffect(() => {
-    setTimeout(() => {
-      window.location.reload();
-    }, 1500);
-  }, []);
 
   return (
     <div>
